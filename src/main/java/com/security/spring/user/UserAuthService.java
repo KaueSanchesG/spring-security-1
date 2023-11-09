@@ -21,16 +21,7 @@ public class UserAuthService implements UserDetailsService {
         if (user == null) {
             throw new UsernameNotFoundException("User not found with username: " + username);
         }
-
-        return User.builder()
-                .username(user.getUsername())
-                .password(passwordEncoder().encode(user.getPassword()))
-                .roles(user.getRole())
-                .build();
+        return user;
     }
 
-    @Bean
-    PasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
-    }
 }
