@@ -42,11 +42,7 @@ public class Security {
     }
 
     protected void authManager(AuthenticationManagerBuilder auth) throws Exception {
-
         auth.userDetailsService(service).passwordEncoder(passwordEncoder());
-
-
     }
-
 }
 
